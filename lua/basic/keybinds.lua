@@ -1,5 +1,5 @@
 -- leader 键设置为空格                                    
--- vim.g.mapleader = " "    
+ vim.g.mapleader = " "
     
 -- 默认的键位设置函数太长了，所以这里将它们重新引用一下
 vim.keybinds = {    
