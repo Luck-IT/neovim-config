@@ -203,6 +203,78 @@ packer.startup(
         use{
             "mfussenegger/nvim-jdtls"
         }
+        -- 语法高亮
+        use{
+            "nvim-treesitter/nvim-treesitter",
+            run = {":TSupdate"},
+            requires = {
+                -- 彩虹括号
+                "p00f/nvim-ts-rainbow"
+            },
+            config = function()
+                require("conf.nvim-treesitter")
+            end
+        }
+        -- 代码注释
+        use {
+            "numToStr/Comment.nvim",
+            requires = {
+                "JoosepAlviste/nvim-ts-context-commentstring"
+            },
+            config = function()
+                require("conf.Comment")
+            end
+        }
+        -- 代码格式化
+        use {
+             "sbdchd/neoformat",
+              config = function()
+                 require("conf.neoformat")
+              end
+        }
+        -- lsp color
+        use {
+            "folke/lsp-colors.nvim",
+             config = function()
+               require("conf.lsp-colors")
+             end
+        }
+        -- 大纲
+        use {
+            "liuchengxu/vista.vim",
+             config = function()
+               require("conf.vista")
+             end
+        }
+        -- 代码调试基础插件
+        use {
+            "mfussenegger/nvim-dap",
+             config = function()
+               require("conf.nvim-dap")
+             end
+            }
+                                              
+        -- 为代码调试提供内联文本
+        use {
+            "theHamsta/nvim-dap-virtual-text",
+             requires = {
+                "mfussenegger/nvim-dap"
+            },
+             config = function()
+               require("conf.nvim-dap-virtual-text")
+             end
+            }
+                                              
+         -- 为代码调试提供 UI 界面
+        use {
+             "rcarriga/nvim-dap-ui",
+              requires = {
+               "mfussenegger/nvim-dap"
+              },
+              config = function()
+                require("conf.nvim-dap-ui")
+              end
+            }
 end,
         -- 使用浮动窗口
         config = {

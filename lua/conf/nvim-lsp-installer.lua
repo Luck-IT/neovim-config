@@ -18,6 +18,8 @@ local servers = {
     -- sqls = require("lsp.sqls"),
     -- vuels = require("lsp.vuels")
 }
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 -- 这里是 LSP 服务启动后的按键加载
 local function attach(_, bufnr)
     -- 跳转到定义（代替内置 LSP 的窗口，telescope 插件让跳转定义更方便）
@@ -69,6 +71,8 @@ for server_name, server_options in pairs(servers) do
                 server_options.flags = {
                     debounce_text_changes = 150
                 }
+                -- 代替内置 omnifunc
+                server_options.capabilities = capabilities
                 -- 启动服务
                 server:setup(server_options)
             end
