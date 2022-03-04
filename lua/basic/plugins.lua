@@ -199,6 +199,10 @@ packer.startup(
                    require("conf.copilot")
                   end
              }
+        -- nvim-jdtls
+        use{
+            "mfussenegger/nvim-jdtls"
+        }
 end,
         -- 使用浮动窗口
         config = {

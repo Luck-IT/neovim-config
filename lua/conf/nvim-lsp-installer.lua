@@ -6,6 +6,8 @@ local lsp_installer_servers = require("nvim-lsp-installer.servers")
 local servers = {
     -- 语言服务器名称：配置选项
     sumneko_lua = require("lsp.sumneko_lua"),
+    -- java
+    jdtls = require("lsp.jdtls")
     -- pyright = require("lsp.pyright"),
     -- tsserver = require("lsp.tsserver"),
     -- html = require("lsp.html"),
@@ -56,6 +58,8 @@ for server_name, server_options in pairs(servers) do
     local server_available, server = lsp_installer_servers.get_server(server_name)
     -- 判断服务是否可用
     if server_available then
+        -- 排除jdts
+        if server_name ~= 'jdtls' then
         -- 判断服务是否准备就绪，若就绪则启动服务
         server:on_ready(
             function()
@@ -69,6 +73,7 @@ for server_name, server_options in pairs(servers) do
                 server:setup(server_options)
             end
         )
+    end
         -- 如果服务器没有下载，则通过 notify 插件弹出下载提示
         if not server:is_installed() then
             vim.notify("Install Language Server : " .. server_name, "WARN", {title = "Language Servers"})
