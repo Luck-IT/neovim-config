@@ -11,7 +11,7 @@ packer.startup(
     -- OceanicNext
     use("mhartington/oceanic-next")
     -- gruvbox
-    use({ "ellisonleao/gruvbox.nvim", requires = "rktjmp/lush.nvim" })
+    use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
     -- zephyr 暂时不推荐，详见上边解释
     -- use("glepnir/zephyr-nvim")
     -- nord
@@ -23,6 +23,11 @@ packer.startup(
     ------------------------------------------------
     -- nvim-tree
     use({"kyazdani42/nvim-tree.lua",requires = "kyazdani42/nvim-web-devicons"})
+    -- bufferline
+    use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
+    -- lualine
+    use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+    use("arkav/lualine-lsp-progress")
   end,
   config = {
     max_jobs = 16,
