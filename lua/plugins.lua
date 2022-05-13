@@ -33,7 +33,9 @@ packer.startup(
     -----------------------------LSP---------------------------------------------
     use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
     -- Lspconfig
-    use({ "neovim/nvim-lspconfig" }) 
+    use({ "neovim/nvim-lspconfig" })
+    -- telescope （新增）
+    use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
 
   end,
   config = {
