@@ -36,7 +36,10 @@ packer.startup(
     use({ "neovim/nvim-lspconfig" })
     -- telescope （新增）
     use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
-
+     -- dashboard-nvim (新增)
+    use("glepnir/dashboard-nvim")
+    -- project
+    use("ahmedkhalf/project.nvim")
   end,
   config = {
     max_jobs = 16,
