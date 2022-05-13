@@ -9,7 +9,7 @@ packer.startup(
     -- tokyonight
     use("folke/tokyonight.nvim")
     -- OceanicNext
-    use("mhartington/oceanic-next")
+    use("EricLuckIT/oceanic-next")
     -- gruvbox
     use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
     -- zephyr 暂时不推荐，详见上边解释
@@ -22,7 +22,7 @@ packer.startup(
     use("EdenEast/nightfox.nvim")
     ------------------------------------------------
     -- nvim-tree
-    use({"kyazdani42/nvim-tree.lua",requires = "kyazdani42/nvim-web-devicons"})
+    use({"EricLuckIT/nvim-tree.lua",requires = "kyazdani42/nvim-web-devicons"})
     -- bufferline
     use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
     -- lualine
@@ -33,7 +33,7 @@ packer.startup(
     max_jobs = 16,
     -- 自定义插件源，github网站无法访问可以使用
     git = {
-          --  default_url_format = "https://hub.fastgit.xyz/%s",
+            default_url_format = "https://gitee.com/%s",
           --  default_url_format = "https://mirror.ghproxy.com/https://github.com/%s",
           --  default_url_format = "https://gitcode.net/mirrors/%s",
           --  default_url_format = "https://gitclone.com/github.com/%s"
