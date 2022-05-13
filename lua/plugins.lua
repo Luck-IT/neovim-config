@@ -32,6 +32,7 @@ packer.startup(
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     -----------------------------LSP---------------------------------------------
     use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
+    use("mfussenegger/nvim-jdtls")
     -- Lspconfig
     use({ "neovim/nvim-lspconfig" })
     -- telescope （新增）
